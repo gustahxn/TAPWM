@@ -1,11 +1,12 @@
 // maths
-const runOperations = () => {
+const rodarOperacoes = () => {
   const n1 = parseFloat(prompt("Digite o primeiro número:"));
   const n2 = parseFloat(prompt("Digite o segundo número:"));
 
   // busca por nums validos
   if (isNaN(n1) || isNaN(n2)) {
-    alert("Valores inválidos. Digite apenas números.");
+    const retry = confirm("Digite apenas números. Ok para tentar novamente.");
+    if (retry) rodarOperacoes();
     return;
   }
 
@@ -29,8 +30,8 @@ const runOperations = () => {
 
   // reiniciar
   const retry = confirm("Deseja realizar novos cálculos?");
-  if (retry) runOperations();
+  if (retry) rodarOperacoes();
 };
 
 // roda o script depois de carregar a janela
-window.addEventListener("load", runOperations);
+window.addEventListener("load", rodarOperacoes);

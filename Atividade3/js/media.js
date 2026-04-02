@@ -1,28 +1,38 @@
 // calculo
-const calculateGrades = () => {
-  const name = prompt("Digite o nome do aluno:");
+const calcularNotas = () => {
+  const nome = prompt("Digite o nome do aluno:");
 
   // sair se o user cancelar
-  if (!name) return;
+  if (!nome) return;
 
-  const g1 = parseFloat(prompt("Digite a 1ª nota:"));
-  const g2 = parseFloat(prompt("Digite a 2ª nota:"));
-  const g3 = parseFloat(prompt("Digite a 3ª nota:"));
+  const apenasLetras = /^[a-zA-ZÀ-ÿ\s]+$/;
+  if (!apenasLetras.test(nome)) {
+    const retry = confirm(
+      "Digite apenas letras para o nome! Aperte Ok para tentar novamente.",
+    );
+    if (retry) calcularNotas();
+    return;
+  }
+
+  const n1 = parseFloat(prompt("Digite a 1ª nota:"));
+  const n2 = parseFloat(prompt("Digite a 2ª nota:"));
+  const n3 = parseFloat(prompt("Digite a 3ª nota:"));
 
   // valida entradas
-  if (isNaN(g1) || isNaN(g2) || isNaN(g3)) {
-    alert("Notas inválidas inseridas. A operação foi cancelada.");
+  if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+    const retry = confirm("Notas inválidas. Ok para tentar novamente.");
+    if (retry) calcularNotas();
     return;
   }
 
   // output
-  const mean = (g1 + g2 + g3) / 3;
-  alert(`Aluno: ${name}\nMédia aritmética: ${mean.toFixed(2)}`);
+  const avg = (n1 + n2 + n3) / 3;
+  alert(`Aluno: ${nome}\nMédia aritmética: ${avg.toFixed(2)}`);
 
   // reiniciar
   const retry = confirm("Deseja calcular a média de outro aluno?");
-  if (retry) calculateGrades();
+  if (retry) calcularNotas();
 };
 
 // roda o script depois de carregar a janela
-window.addEventListener("load", calculateGrades);
+window.addEventListener("load", calcularNotas);
