@@ -1,11 +1,11 @@
-// mapeamento das jogadas com icones font awesome
+// mapeamento das jogadas
 const JOGADAS = {
   1: { nome: "Pedra", icone: "fa-hand-back-fist" },
   2: { nome: "Papel", icone: "fa-hand" },
   3: { nome: "Tesoura", icone: "fa-hand-scissors" }
 };
 
-// icone padrao exibido antes da primeira jogada
+// icone padrao
 const ICONE_PADRAO = '<i class="fa-solid fa-question"></i>';
 
 // elementos do DOM
@@ -18,10 +18,9 @@ const pontosEmpate = document.getElementById("pontos-empate");
 const botoesOpcao = document.querySelectorAll(".botao-opcao");
 const botaoReiniciar = document.getElementById("btn-reiniciar");
 
-// placar
 let placar = { jogador: 0, computador: 0, empate: 0 };
 
-// gera a escolha do computador entre 1 e 3
+// escolha da cpu
 function gerarEscolhaComputador() {
   return Math.floor(Math.random() * 3) + 1;
 }
@@ -38,14 +37,13 @@ function determinarResultado(escolhaJogador, escolhaComputador) {
   return jogadorVence ? "vitoria" : "derrota";
 }
 
-// retorna a mensagem adequada ao resultado
+// retorna a mensagem
 function gerarMensagem(resultado, nomeJogador, nomeComputador) {
   if (resultado === "empate") return "Empate! Ambos escolheram " + nomeJogador;
   if (resultado === "vitoria") return "Voce venceu! " + nomeJogador + " vence " + nomeComputador + ".";
   return "Voce perdeu! " + nomeComputador + " vence " + nomeJogador + ".";
 }
 
-// monta o html do icone a partir da classe font awesome
 function montarIconeHtml(classeIcone) {
   return '<i class="fa-solid ' + classeIcone + '"></i>';
 }
@@ -57,7 +55,6 @@ function atualizarPlacar() {
   pontosEmpate.textContent = placar.empate;
 }
 
-// aplica animacao nos icones da arena
 function animarIcones() {
   iconeJogador.classList.add("animando");
   iconeComputador.classList.add("animando");
@@ -68,13 +65,11 @@ function animarIcones() {
   }, 400);
 }
 
-// executa uma rodada completa do jogo
 function jogar(escolhaJogador) {
   const escolhaComputador = gerarEscolhaComputador();
   const jogadaJogador = JOGADAS[escolhaJogador];
   const jogadaComputador = JOGADAS[escolhaComputador];
 
-  // atualiza os icones na arena
   iconeJogador.innerHTML = montarIconeHtml(jogadaJogador.icone);
   iconeComputador.innerHTML = montarIconeHtml(jogadaComputador.icone);
   iconeJogador.classList.add("ativo");
@@ -94,7 +89,6 @@ function jogar(escolhaJogador) {
   atualizarPlacar();
 }
 
-// reinicia o placar e a interface
 function reiniciarPlacar() {
   placar = { jogador: 0, computador: 0, empate: 0 };
   atualizarPlacar();

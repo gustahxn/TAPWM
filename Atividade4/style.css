@@ -1,4 +1,3 @@
-/* reset geral */
 *,
 *::before,
 *::after {
@@ -7,7 +6,6 @@
   box-sizing: border-box;
 }
 
-/* variaveis de tema */
 :root {
   --fundo: #121212;
   --superficie: #1e1e1e;
@@ -31,7 +29,6 @@ body {
   padding: 2rem;
 }
 
-/* container principal */
 .container {
   width: 100%;
   max-width: 600px;
@@ -41,7 +38,6 @@ body {
   gap: 2rem;
 }
 
-/* titulo */
 .titulo {
   font-size: 2rem;
   font-weight: 500;
@@ -89,7 +85,6 @@ body {
   color: var(--destaque);
 }
 
-/* arena de confronto */
 .arena {
   display: flex;
   align-items: center;
@@ -145,7 +140,6 @@ body {
   color: var(--borda);
 }
 
-/* resultado */
 .resultado {
   font-size: 1.1rem;
   font-weight: 400;
@@ -166,7 +160,6 @@ body {
   color: var(--texto);
 }
 
-/* botoes de escolha */
 .opcoes {
   display: flex;
   gap: 1rem;
@@ -201,7 +194,6 @@ body {
   border-color: var(--destaque);
 }
 
-/* botao reiniciar */
 .botao-reiniciar {
   padding: 0.6rem 1.6rem;
   border: 1px solid var(--borda);
@@ -221,16 +213,35 @@ body {
   color: var(--destaque);
 }
 
-/* animacao */
 @keyframes pulsar {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
 }
 
-/* responsividade */
 @media (max-width: 480px) {
-  .titulo { font-size: 1.5rem; }
-  .placar { padding: 1rem; }
-  .arena { gap: 1.5rem; padding: 1.5rem; }
-  .icone-jogada { width: 72px; height: 72px; font-size: 1.8rem; }
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .placar {
+    padding: 1rem;
+  }
+
+  .arena {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .icone-jogada {
+    width: 72px;
+    height: 72px;
+    font-size: 1.8rem;
+  }
 }
