@@ -1,0 +1,236 @@
+/* reset geral */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* variaveis de tema */
+:root {
+  --fundo: #121212;
+  --superficie: #1e1e1e;
+  --borda: #333;
+  --destaque: #b0b0b0;
+  --destaque-fraco: #2a2a2a;
+  --texto: #e0e0e0;
+  --texto-fraco: #888;
+  --raio: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-weight: 400;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* container principal */
+.container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* titulo */
+.titulo {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--texto);
+}
+
+.subtitulo {
+  color: var(--texto-fraco);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -0.8rem;
+}
+
+/* placar */
+.placar {
+  display: flex;
+  justify-content: space-around;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.2rem 2rem;
+  width: 100%;
+}
+
+.placar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.placar-rotulo {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.placar-valor {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--destaque);
+}
+
+/* arena de confronto */
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 2rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+}
+
+.jogador-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.icone-jogada {
+  font-size: 2.2rem;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--fundo);
+  color: var(--texto-fraco);
+}
+
+.icone-jogada.animando {
+  animation: pulsar 0.4s ease;
+}
+
+.icone-jogada.ativo {
+  color: var(--destaque);
+  border-color: var(--destaque);
+}
+
+.nome-jogador {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.vs {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--borda);
+}
+
+/* resultado */
+.resultado {
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  min-height: 1.5em;
+  color: var(--texto-fraco);
+}
+
+.resultado.vitoria {
+  color: var(--destaque);
+}
+
+.resultado.derrota {
+  color: var(--texto-fraco);
+}
+
+.resultado.empate {
+  color: var(--texto);
+}
+
+/* botoes de escolha */
+.opcoes {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.botao-opcao {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.2rem 0.8rem;
+  border: 2px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--superficie);
+  color: var(--texto);
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.botao-opcao i {
+  font-size: 1.6rem;
+  color: var(--destaque);
+}
+
+.botao-opcao:hover {
+  border-color: var(--destaque);
+}
+
+/* botao reiniciar */
+.botao-reiniciar {
+  padding: 0.6rem 1.6rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: transparent;
+  color: var(--texto-fraco);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.botao-reiniciar:hover {
+  border-color: var(--destaque);
+  color: var(--destaque);
+}
+
+/* animacao */
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* responsividade */
+@media (max-width: 480px) {
+  .titulo { font-size: 1.5rem; }
+  .placar { padding: 1rem; }
+  .arena { gap: 1.5rem; padding: 1.5rem; }
+  .icone-jogada { width: 72px; height: 72px; font-size: 1.8rem; }
+}

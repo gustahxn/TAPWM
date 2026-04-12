@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo de Pedra, Papel ou Tesoura contra o computador">
+  <title>Pedra, Papel ou Tesoura</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="titulo">Pedra, Papel ou Tesoura</h1>
+    <p class="subtitulo">Escolha sua jogada e desafie o computador!</p>
+
+    <!-- placar da partida -->
+    <section class="placar">
+      <div class="placar-item">
+        <span class="placar-rotulo">Voce</span>
+        <span class="placar-valor" id="pontos-jogador">0</span>
+      </div>
+      <div class="placar-item">
+        <span class="placar-rotulo">Empates</span>
+        <span class="placar-valor" id="pontos-empate">0</span>
+      </div>
+      <div class="placar-item">
+        <span class="placar-rotulo">PC</span>
+        <span class="placar-valor" id="pontos-computador">0</span>
+      </div>
+    </section>
+
+    <!-- area de confronto -->
+    <section class="arena">
+      <div class="jogador-area">
+        <span class="icone-jogada" id="icone-jogador"><i class="fa-solid fa-question"></i></span>
+        <span class="nome-jogador">Voce</span>
+      </div>
+      <span class="vs">VS</span>
+      <div class="jogador-area">
+        <span class="icone-jogada" id="icone-computador"><i class="fa-solid fa-question"></i></span>
+        <span class="nome-jogador">PC</span>
+      </div>
+    </section>
+
+    <!-- resultado da rodada -->
+    <p class="resultado" id="texto-resultado">Faca sua escolha abaixo:</p>
+
+    <!-- botoes de escolha -->
+    <section class="opcoes">
+      <button class="botao-opcao" id="btn-pedra" data-escolha="1">
+        <i class="fa-solid fa-hand-back-fist"></i>
+        <span>Pedra</span>
+      </button>
+      <button class="botao-opcao" id="btn-papel" data-escolha="2">
+        <i class="fa-solid fa-hand"></i>
+        <span>Papel</span>
+      </button>
+      <button class="botao-opcao" id="btn-tesoura" data-escolha="3">
+        <i class="fa-solid fa-hand-scissors"></i>
+        <span>Tesoura</span>
+      </button>
+    </section>
+
+    <!-- reiniciar placar -->
+    <button class="botao-reiniciar" id="btn-reiniciar">Reiniciar</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
