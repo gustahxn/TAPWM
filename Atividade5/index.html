@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa do Filme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- painel do formulário -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h1 class="text-xl font-semibold mb-6">Adicionar resposta:</h1>
+            <form id="survey-form" class="space-y-4">
+                <div>
+                    <label for="age" class="block text-sm font-medium mb-1">Idade</label>
+                    <input type="number" id="age" required min="1" max="130"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="gender" class="block text-sm font-medium mb-1">Sexo</label>
+                    <select id="gender" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                        <option value="">Selecione</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="opinion" class="block text-sm font-medium mb-1">Opinião</label>
+                    <select id="opinion" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                        <option value="">Selecione</option>
+                        <option value="4">Ótimo (4)</option>
+                        <option value="3">Bom (3)</option>
+                        <option value="2">Regular (2)</option>
+                        <option value="1">Péssimo (1)</option>
+                    </select>
+                </div>
+                <button type="submit" id="submit-btn"
+                    class="w-full bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">
+                    Registrar resposta
+                </button>
+            </form>
+            <div class="mt-4 text-sm text-gray-500" id="counter-display">
+                Respostas: 0 / 45
+            </div>
+        </div>
+
+        <!-- resultados -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">Resultados</h2>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span class="text-sm text-gray-600">Média de idade</span>
+                    <span id="mean-age" class="font-medium text-gray-900">-</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span class="text-sm text-gray-600">Pessoa mais velha</span>
+                    <span id="max-age" class="font-medium text-gray-900">-</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span class="text-sm text-gray-600">Pessoa mais nova</span>
+                    <span id="min-age" class="font-medium text-gray-900">-</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span class="text-sm text-gray-600">Respostas 'péssimo'</span>
+                    <span id="bad-count" class="font-medium text-gray-900">-</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                    <span class="text-sm text-gray-600">Ótimo e bom</span>
+                    <span id="good-percentage" class="font-medium text-gray-900">-</span>
+                </div>
+                <div class="pt-2">
+                    <span class="text-sm text-gray-600 block mb-2">Por gênero</span>
+                    <div class="grid grid-cols-3 gap-2 text-sm">
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <span class="block text-gray-500 text-xs mb-1">Homens</span>
+                            <span id="men-count" class="font-medium text-gray-900 block">0</span>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <span class="block text-gray-500 text-xs mb-1">Mulheres</span>
+                            <span id="women-count" class="font-medium text-gray-900 block">0</span>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-md">
+                            <span class="block text-gray-500 text-xs mb-1">Outros</span>
+                            <span id="others-count" class="font-medium text-gray-900 block">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
