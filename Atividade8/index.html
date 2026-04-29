@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8 - Array</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 flex flex-col items-center gap-10 py-10">
+
+    <div class="w-full max-w-lg flex justify-center mb-2">
+        <h1 class="text-2xl font-bold text-gray-800">Atividade 8 - Arrays e Métodos</h1>
+    </div>
+
+    <div class="w-full max-w-lg flex flex-col gap-8">
+        <!-- 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">1. Operações com 3 números</h2>
+            <form id="form-f1" class="space-y-4">
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label for="f1-n1" class="block text-sm font-medium mb-1">N1</label>
+                        <input type="number" step="any" id="f1-n1" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f1-n2" class="block text-sm font-medium mb-1">N2</label>
+                        <input type="number" step="any" id="f1-n2" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f1-n3" class="block text-sm font-medium mb-1">N3</label>
+                        <input type="number" step="any" id="f1-n3" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Calcular</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+                
+                <div class="mt-6 pt-4 border-t border-gray-100 flex flex-col gap-2">
+                    <span class="text-sm text-gray-600">Saída gerada:</span>
+                    <span id="res-f1" class="font-medium text-gray-900">-</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">2. Formar 10 palavras</h2>
+            <form id="form-f2" class="space-y-4">
+                <div class="grid grid-cols-5 gap-2">
+                    <div>
+                        <input type="text" maxlength="1" id="f2-l1" required
+                            class="w-full text-center border border-gray-300 rounded-md px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black uppercase">
+                    </div>
+                    <div>
+                        <input type="text" maxlength="1" id="f2-l2" required
+                            class="w-full text-center border border-gray-300 rounded-md px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black uppercase">
+                    </div>
+                    <div>
+                        <input type="text" maxlength="1" id="f2-l3" required
+                            class="w-full text-center border border-gray-300 rounded-md px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black uppercase">
+                    </div>
+                    <div>
+                        <input type="text" maxlength="1" id="f2-l4" required
+                            class="w-full text-center border border-gray-300 rounded-md px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black uppercase">
+                    </div>
+                    <div>
+                        <input type="text" maxlength="1" id="f2-l5" required
+                            class="w-full text-center border border-gray-300 rounded-md px-2 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black uppercase">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 mt-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Gerar Palavras</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-gray-100 flex flex-col gap-2">
+                    <span class="text-sm text-gray-600">Palavras distintas formadas:</span>
+                    <span id="res-f2" class="font-medium text-gray-900 break-words">-</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

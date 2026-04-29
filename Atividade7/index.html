@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7 - Funções</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-4 flex flex-col items-center gap-12 py-10">
+
+    <div class="w-full max-w-5xl flex justify-center mb-2">
+        <h1 class="text-2xl font-bold text-gray-800">Atividade 7 - Funções JavaScript</h1>
+    </div>
+
+    <!-- 1 -->
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">1. Maior de três números</h2>
+            <form id="form-f1" class="space-y-4">
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label for="f1-n1" class="block text-sm font-medium mb-1">N1</label>
+                        <input type="number" step="any" id="f1-n1" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f1-n2" class="block text-sm font-medium mb-1">N2</label>
+                        <input type="number" step="any" id="f1-n2" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f1-n3" class="block text-sm font-medium mb-1">N3</label>
+                        <input type="number" step="any" id="f1-n3" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Verificar</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center">
+            <h2 class="text-xl font-semibold mb-6">Resultado</h2>
+            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                <span class="text-sm text-gray-600">Maior número</span>
+                <span id="res-f1" class="font-medium text-gray-900">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">2. Ordem crescente</h2>
+            <form id="form-f2" class="space-y-4">
+                <div class="grid grid-cols-3 gap-4">
+                    <div>
+                        <label for="f2-n1" class="block text-sm font-medium mb-1">N1</label>
+                        <input type="number" step="any" id="f2-n1" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f2-n2" class="block text-sm font-medium mb-1">N2</label>
+                        <input type="number" step="any" id="f2-n2" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                    <div>
+                        <label for="f2-n3" class="block text-sm font-medium mb-1">N3</label>
+                        <input type="number" step="any" id="f2-n3" required
+                            class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Ordenar</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center">
+            <h2 class="text-xl font-semibold mb-6">Resultado</h2>
+            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                <span class="text-sm text-gray-600">Em ordem</span>
+                <span id="res-f2" class="font-medium text-gray-900">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">3. Palíndromo</h2>
+            <form id="form-f3" class="space-y-4">
+                <div>
+                    <label for="f3-str" class="block text-sm font-medium mb-1">Texto</label>
+                    <input type="text" id="f3-str" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Verificar</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center">
+            <h2 class="text-xl font-semibold mb-6">Resultado</h2>
+            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                <span class="text-sm text-gray-600">É palíndromo?</span>
+                <span id="res-f3" class="font-medium text-gray-900">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">4. Subconjunto</h2>
+            <form id="form-f4" class="space-y-4">
+                <div>
+                    <label for="f4-p1" class="block text-sm font-medium mb-1">Palavra 1</label>
+                    <input type="text" id="f4-p1"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div>
+                    <label for="f4-p2" class="block text-sm font-medium mb-1">Palavra 2</label>
+                    <input type="text" id="f4-p2"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Verificar</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center">
+            <h2 class="text-xl font-semibold mb-6">Resultado</h2>
+            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                <span class="text-sm text-gray-600">Verificação</span>
+                <span id="res-f4" class="font-medium text-gray-900">-</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">5. Dia da semana</h2>
+            <form id="form-f5" class="space-y-4">
+                <div>
+                    <label for="f5-data" class="block text-sm font-medium mb-1">Data</label>
+                    <input type="date" id="f5-data" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black">
+                </div>
+                <div class="flex items-center gap-4">
+                    <button type="submit"
+                        class="flex-1 bg-black text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-800 transition-colors">Descobrir</button>
+                    <button type="reset"
+                        class="text-sm text-gray-500 hover:text-gray-900 font-medium transition-colors whitespace-nowrap">Limpar</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-300 pointer-events-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center">
+            <h2 class="text-xl font-semibold mb-6">Resultado</h2>
+            <div class="flex justify-between items-center py-2 border-b border-gray-50">
+                <span class="text-sm text-gray-600">Dia</span>
+                <span id="res-f5" class="font-medium text-gray-900">-</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
