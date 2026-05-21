@@ -28,7 +28,7 @@ botaoEnviar.addEventListener("click", function () {
   const b = Number(baseInput.value);
   const a = Number(alturaInput.value);
 
-  //usa o Retangulo para criar o objeto ret
+  //usa a função construtora Retangulo para criar o objeto ret
   const ret = new Retangulo(b, a);
   //usa o metodo de calcular e armazena o resultado
   const area = ret.calcularArea();
