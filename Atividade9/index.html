@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de IMC</title>
+    <style>
+      body { font-family: sans-serif; padding: 50px; background: white; color: #333; }
+      .box { max-width: 300px; margin: auto; text-align: left; }
+      h2 { font-weight: normal; margin-bottom: 25px; }
+      input { 
+        display: block; 
+        width: 100%; 
+        padding: 10px 0; 
+        margin-bottom: 20px; 
+        border: none; 
+        border-bottom: 1px solid #ccc; 
+        outline: none;
+      }
+      button { 
+        background: none; 
+        border: 1px solid #333; 
+        padding: 8px 15px; 
+        cursor: pointer; 
+        margin-right: 5px;
+        border-radius: 4px;
+      }
+      button:hover { background: #f9f9f9; }
+      #outputDiv { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Calculadora IMC</h2>
+      
+      <input id="alturaInput" maxlength="4" type="text" placeholder="Altura (ex: 1.75)" />
+      <input id="pesoInput" maxlength="3" type="text" placeholder="Peso (ex: 80)" />
+
+      <button id="enviarBtn">Calcular</button>
+      <button id="limparBtn">Limpar</button>
+
+      <div id="outputDiv"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
