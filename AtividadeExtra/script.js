@@ -66,3 +66,13 @@ class PessoaCinco {
 
 const pessoa5 = new PessoaCinco("Gustavo Cinco", 18, "viajar");
 console.log("5:", pessoa5.apresentar());
+
+const divOutput = document.getElementById("output");
+
+divOutput.innerHTML += pessoa1.apresentar() + "<br>";
+divOutput.innerHTML += pessoa2.apresentar() + "<br>";
+divOutput.innerHTML += pessoa3.apresentar() + "<br>";
+divOutput.innerHTML += pessoa4.apresentar() + "<br>";
+divOutput.innerHTML += pessoa5.apresentar() + "<br>";
+
+//o método apresentar está sendo exibido tanto no console, quanto na parte front estática via HTML
