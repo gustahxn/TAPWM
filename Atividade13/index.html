@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 13</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="div1">
+      <input type="text" id="texto" placeholder="Insira o seu texto aqui..." />
+      <br />
+      <input
+        type="radio"
+        id="minus"
+        name="radios"
+        onclick="toggleBotao(this)"
+      />
+      <label for="minus">Deixar texto em minúsculo</label>
+      <br />
+      <input
+        type="radio"
+        id="maius"
+        name="radios"
+        onclick="toggleBotao(this)"
+      />
+      <label for="maius">Deixar texto em maiúsculo</label>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

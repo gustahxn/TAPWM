@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+#div1 {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  border: 1px solid rgba(9, 1, 1, 0.887);
+}
+
+#texto {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#texto {
+  border: 1px solid rgba(9, 1, 1, 0.887);
+}
+
+label {
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 8px;
+  user-select: none;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+br {
+  margin-bottom: 10px;
+}

@@ -36,6 +36,9 @@ eventosMouse();
 botaoResetar.addEventListener("click", () => {
   janela.src = "./img/janelaFechada.webp";
   document.getElementById("titulo").textContent = "Abra a JANELA";
+  
+  estaQuebrada = false;
+	
   //resetando os movimentos do mouse
   eventosMouse();
 });
