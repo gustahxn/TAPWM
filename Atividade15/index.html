@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Atividade 15</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#87CEEB;
+    text-align:center;
+    margin-top:60px;
+}
+
+h1{
+    color:#003366;
+}
+
+select{
+    width:320px;
+    padding:8px;
+    font-size:16px;
+}
+
+</style>
+
+<script>
+
+function abrirCurso(){
+
+    var curso = document.getElementById("curso").value;
+
+    if(curso==""){
+        return;
+    }
+
+    if(confirm("Deseja abrir este curso?")){
+
+        var texto="";
+
+        switch(curso){
+
+            case "ADS":
+                texto="<h2>Análise e Desenvolvimento de Sistemas</h2><p>Curso voltado para programação, banco de dados, desenvolvimento web e mobile.</p>";
+                break;
+
+            case "Alimentos":
+                texto="<h2>Alimentos</h2><p>Forma profissionais para atuar na produção e controle de qualidade de alimentos.</p>";
+                break;
+
+            case "Logistica":
+                texto="<h2>Logística</h2><p>Capacita profissionais para atuar em transporte, estoque e distribuição.</p>";
+                break;
+
+            case "Manufatura":
+                texto="<h2>Manufatura Avançada</h2><p>Curso focado em automação, robótica e processos industriais.</p>";
+                break;
+
+            case "Polimeros":
+                texto="<h2>Polímeros</h2><p>Estuda materiais plásticos, borrachas e processos de fabricação.</p>";
+                break;
+
+            case "Projetos":
+                texto="<h2>Projetos Mecânicos</h2><p>Desenvolvimento de projetos utilizando softwares CAD.</p>";
+                break;
+
+            case "Biomedicos":
+                texto="<h2>Sistemas Biomédicos</h2><p>Forma profissionais para manutenção de equipamentos hospitalares.</p>";
+                break;
+
+        }
+
+        var janela = window.open("", "", "width=600,height=300");
+
+        janela.document.write("<html>");
+        janela.document.write("<head>");
+        janela.document.write("<title>"+curso+"</title>");
+        janela.document.write("<style>");
+        janela.document.write("body{font-family:Arial;background:#f5f5f5;padding:20px;}");
+        janela.document.write("h2{color:blue;}");
+        janela.document.write("</style>");
+        janela.document.write("</head>");
+        janela.document.write("<body>");
+        janela.document.write(texto);
+        janela.document.write("</body>");
+        janela.document.write("</html>");
+
+        janela.document.close();
+
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Cursos da Fatec Sorocaba</h1>
+
+<p>Escolha um curso:</p>
+
+<select id="curso" onchange="abrirCurso()">
+
+<option value="">Selecione um curso</option>
+<option value="ADS">Análise e Desenvolvimento de Sistemas</option>
+<option value="Alimentos">Alimentos</option>
+<option value="Logistica">Logística</option>
+<option value="Manufatura">Manufatura Avançada</option>
+<option value="Polimeros">Polímeros</option>
+<option value="Projetos">Projetos Mecânicos</option>
+<option value="Biomedicos">Sistemas Biomédicos</option>
+
+</select>
+
+</body>
+</html>
