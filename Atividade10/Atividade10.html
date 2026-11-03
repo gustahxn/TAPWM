@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de criar objetos</title>
+</head>
+<body>
+    <h1>Atividade 10</h1>
+</body>
+
+<script>
+    // atividade 10 - as formas de criar objetos em javascript
+    // gustavo henrique oliveira da silva - ra 0031432612006
+
+    alert(`Aluno 1`);
+    // forma 1: criando o objeto com new Object
+    var aluno1 = new Object();
+    aluno1.nome = 'Gustavo';
+    aluno1.ra = '0031432612006';
+    alert(`O aluno ${aluno1.nome} tem o RA ${aluno1.ra}`);
+
+
+    alert(`Aluno 2`);
+    var aluno2 = {}; // forma 2: objeto literal
+    aluno2.ra = '0031432612006';
+    aluno2['nome'] = 'Gustavo';
+    alert(`O aluno ${aluno2.nome} tem o RA ${aluno2.ra}`);
+    aluno2["email do aluno"] = "gustavo@exemplo.com"; // troque pelo seu email
+    alert(aluno2["email do aluno"]);
+
+
+    alert(`Aluno 3`);
+    var aluno3 = {
+        nome: 'Gustavo',
+        ra: '0031432612006', // virgula opcional
+    };
+    alert(`O aluno ${aluno3.nome} tem o RA ${aluno3.ra}`);
+
+
+    alert(`Aluno 4`);
+    function Aluno(nome, ra) {
+        this.nome = nome;
+        this.ra = ra;
+        this.MostraDados = function() {
+            return `O aluno ${this.nome} tem o RA ${this.ra}`;
+        }
+    }
+    var aluno4 = new Aluno('Gustavo', '0031432612006');
+    alert(aluno4.MostraDados());
+
+    function Aluno2() {
+        // ra e nome ficam privados, so da pra mexer por set e get
+        var ra;
+        var nome;
+        this.setRa = function(value) {
+            ra = value;
+        }
+        this.setNome = function(value) {
+            nome = value;
+        }
+        this.getRa = function() {
+            return ra;
+        }
+        this.getNome = function() {
+            return nome;
+        }
+    }
+
+    alert(`Aluno 5`);
+    var aluno5 = new Aluno2();
+    aluno5.setRa('0031432612006');
+    aluno5.setNome('Gustavo');
+    alert(`O aluno ${aluno5.getNome()} tem o RA ${aluno5.getRa()}`);
+
+    alert(`Aluno 6`);
+    var aluno6 = new Aluno2();
+    aluno6.setRa('0031432612006');
+    aluno6.setNome('Gustavo');
+    alert(`O aluno ${aluno6.getNome()} tem o RA ${aluno6.getRa()}`);
+
+
+    alert(`Aluno 7`); // heranca
+    function AlunoADS(){
+        var numLab;
+        this.setNumLab = function(value) {
+            numLab = value;
+        }
+        this.getNumLab = function() {
+            return numLab;
+        }
+    }
+
+    AlunoADS.prototype = new Aluno2();
+
+    var aluno7 = new AlunoADS();
+    aluno7.setRa('0031432612006');
+    aluno7.setNome('Gustavo');
+    aluno7.setNumLab('5');
+    alert(`O aluno ${aluno7.getNome()} tem o RA ${aluno7.getRa()} e o número do laboratório é ${aluno7.getNumLab()}`);
+
+    alert(`Aluno 8`);
+    // usando class
+    class Aluno1{
+        constructor(){
+            this.nome = '';
+            this.ra = '';
+            this.numLab = '';
+        }
+        setNome(nome){
+            this.nome = nome;
+        }
+        setRa(ra){
+            this.ra = ra;
+        }
+        setNumLab(numLab){
+            this.numLab = numLab;
+        }
+        getNome(){
+            return this.nome;
+        }
+        getRa(){
+            return this.ra;
+        }
+    }
+    var objAluno = new Aluno1();
+    objAluno.setNome('Gustavo');
+    objAluno.setRa('0031432612006');
+    objAluno.setNumLab('5');
+    alert(`O aluno ${objAluno.getNome()} tem o RA ${objAluno.getRa()}`);
+
+    alert(`Aluno 9`);
+    // heranca
+    class AlunoADS1 extends Aluno1{
+        constructor(){
+            // super chama o construtor da classe pai
+            super();
+            this.numLab = '';
+        }
+        setNumLab(numLab){
+            this.numLab = numLab;
+        }
+        getNumLab(){
+            return this.numLab;
+        }
+    }
+    var objAlunoADS = new AlunoADS1();
+    objAlunoADS.setNome('Gustavo');
+    objAlunoADS.setRa('0031432612006');
+    objAlunoADS.setNumLab('6');
+    alert(`O aluno ${objAlunoADS.getNome()} tem o RA ${objAlunoADS.getRa()} e o número do laboratório é ${objAlunoADS.getNumLab()}`);
+
+    // outros exemplos
+
+    alert(`Cópia de objeto`);
+    // aqui obj2 aponta pro mesmo objeto, nao e uma copia de verdade
+    var obj1 = new Object();
+    var obj2 = obj1;
+    obj1.nome = 'Gustavo';
+    alert(obj2.nome);
+
+    // metodos e atributos - publicos e privados
+    class ContaBancaria{
+        #cpf // atributo privado
+
+        constructor(nome, saldoInicial){
+            this.nome = nome; // atributo publico
+            this.saldo = saldoInicial;
+        }
+
+        setCpf(value){
+            this.#cpf = value;
+        }
+        getCpf(){
+            return this.#cpf;
+        }
+
+        getSaldo(){
+            return this.saldo;
+        }
+
+        // metodo publico
+        depositar(valor){
+            this.saldo += valor;
+            this.#registrarTransacao(valor);
+        }
+
+        // metodo privado, o # impede chamar de fora da classe
+        #registrarTransacao(valor){
+            console.log(`Depósito de R$ ${valor}, realizado pelo ${this.nome} e o Saldo R$ ${this.saldo} para cpf ${this.getCpf()} ou ${this.#cpf}`);
+        }   
+    }
+
+    const conta = new ContaBancaria("Gustavo", 1000);
+    conta.setCpf(123);
+    conta.depositar(500);
+
+</script>
+</html>
